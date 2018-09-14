@@ -1,0 +1,100 @@
+﻿@{
+    ViewData["Title"] = "舜禹水务";
+    ViewData["active"] = "on";
+}
+
+<link rel="stylesheet" href="~/css/css.css" />
+<link rel="stylesheet" href="https://cache.amap.com/lbs/static/main1119.css" />
+
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.8&key=舜禹水务"></script>
+<script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
+<div id="container"></div>
+<div id="myPageTop">
+    <div>
+        <input id="tipinput" value="" />
+        <input type="button" class="res" />
+    </div>
+    <ul class="map_sel"></ul>
+</div>
+
+
+<script>
+    //初始化地图对象，加载地图
+    var lnglats = [
+
+        { "center": "117.10009, 31.97019", "name": "义井社区东", "type": "2", "url": "?a=3", "id": "3" },
+        
+    ];
+    function map() {
+        var map = new AMap.Map("container", { resizeEnable: true, zoom: 7 });
+        var infoWindow = new AMap.InfoWindow({ offset: new AMap.Pixel(0, -30) });
+        for (var i = 0, marker; i < lnglats.length; i++) {
+            var text = "<div class='ico'><img src='../img/mark_bs.png' style='width:20px;' /><span>" + lnglats[i].name +"</span>"+"</div>";
+            var marker = new AMap.Marker({
+                content: text,
+                position: lnglats[i].center.split(','),
+                title: lnglats[i].type,
+                map: map
+            });
+
+            marker.content = lnglats[i].name;
+
+
+
+            marker.on('click', markerClick);
+        }
+        function markerClick(e) {
+            infoWindow.setContent(e.target.content);
+            //infoWindow.setUrl(e.target.url);
+            infoWindow.open(map, e.target.getPosition());
+            //alert(this.content);
+            //window.location.href = "/Default/Details?id=" + lnglats.length;
+            window.location.href = "/Default/Details?name=" + this.content;
+        }
+
+    }
+    //搜索项目名称
+    function research() {
+        var opl = lnglats;
+        var arr = [];
+        var word = $("#tipinput")[0].value;
+        for (i = 0; i < lnglats.length; i++) {
+            var name1 = lnglats[i].name;
+            if (name1.match(word)) {
+                arr.push(lnglats[i]);
+            }
+        }
+        if (arr.length > 0) {
+            var map_dom = "";
+            for (i = 0; i < arr.length; i++) {
+                map_dom += "<li><img src='../img/mark_bs.png'/><h4>" + arr[i].name + "</h4></li>";
+            }
+            $(".map_sel")[0].innerHTML = map_dom;
+        }
+        lnglats = arr;
+        map();
+        lnglats = opl;
+    }
+    //输入时执行
+    $("#tipinput").bind('input', function () {
+        research();
+        //点击.map_sel li事件
+        $(".map_sel li").click(function () {
+            $("#tipinput")[0].value = $(this).children("h4")[0].innerHTML;
+            research();
+            $(".map_sel")[0].innerHTML = "";
+        })
+
+    });
+
+    //点击搜索按钮执行
+    $(".res").click(function () {
+        research();
+        $(".map_sel")[0].innerHTML = "";
+    })
+
+    //}
+    map();
+</script>
+
+

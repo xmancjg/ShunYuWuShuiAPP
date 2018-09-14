@@ -1,0 +1,44 @@
+D:\WWWROOT\Csharp\.NET Core\智慧水务平台\WisdomWaterServicePlatform\bin\Debug\netcoreapp2.0\WisdomWaterServicePlatform.deps.json
+D:\WWWROOT\Csharp\.NET Core\智慧水务平台\WisdomWaterServicePlatform\bin\Debug\netcoreapp2.0\WisdomWaterServicePlatform.runtimeconfig.json
+D:\WWWROOT\Csharp\.NET Core\智慧水务平台\WisdomWaterServicePlatform\bin\Debug\netcoreapp2.0\WisdomWaterServicePlatform.runtimeconfig.dev.json
+D:\WWWROOT\Csharp\.NET Core\智慧水务平台\WisdomWaterServicePlatform\bin\Debug\netcoreapp2.0\WisdomWaterServicePlatform.dll
+D:\WWWROOT\Csharp\.NET Core\智慧水务平台\WisdomWaterServicePlatform\obj\Debug\netcoreapp2.0\WisdomWaterServicePlatform.csprojResolveAssemblyReference.cache
+D:\WWWROOT\Csharp\.NET Core\智慧水务平台\WisdomWaterServicePlatform\obj\Debug\netcoreapp2.0\WisdomWaterServicePlatform.csproj.CoreCompileInputs.cache
+D:\WWWROOT\Csharp\.NET Core\智慧水务平台\WisdomWaterServicePlatform\obj\Debug\netcoreapp2.0\WisdomWaterServicePlatform.AssemblyInfoInputs.cache
+D:\WWWROOT\Csharp\.NET Core\智慧水务平台\WisdomWaterServicePlatform\obj\Debug\netcoreapp2.0\WisdomWaterServicePlatform.AssemblyInfo.cs
+D:\WWWROOT\Csharp\.NET Core\智慧水务平台\WisdomWaterServicePlatform\bin\Debug\netcoreapp2.0\WisdomWaterServicePlatform.pdb
+D:\WWWROOT\Csharp\.NET Core\智慧水务平台\WisdomWaterServicePlatform\obj\Debug\netcoreapp2.0\WisdomWaterServicePlatform.dll
+D:\WWWROOT\Csharp\.NET Core\智慧水务平台\WisdomWaterServicePlatform\obj\Debug\netcoreapp2.0\WisdomWaterServicePlatform.pdb
+C:\soft\智慧水务平台\智慧水务平台\WisdomWaterServicePlatform\bin\Debug\netcoreapp2.0\WisdomWaterServicePlatform.deps.json
+C:\soft\智慧水务平台\智慧水务平台\WisdomWaterServicePlatform\bin\Debug\netcoreapp2.0\WisdomWaterServicePlatform.runtimeconfig.json
+C:\soft\智慧水务平台\智慧水务平台\WisdomWaterServicePlatform\bin\Debug\netcoreapp2.0\WisdomWaterServicePlatform.runtimeconfig.dev.json
+C:\soft\智慧水务平台\智慧水务平台\WisdomWaterServicePlatform\bin\Debug\netcoreapp2.0\WisdomWaterServicePlatform.dll
+C:\soft\智慧水务平台\智慧水务平台\WisdomWaterServicePlatform\bin\Debug\netcoreapp2.0\WisdomWaterServicePlatform.pdb
+C:\soft\智慧水务平台\智慧水务平台\WisdomWaterServicePlatform\obj\Debug\netcoreapp2.0\WisdomWaterServicePlatform.csprojAssemblyReference.cache
+C:\soft\智慧水务平台\智慧水务平台\WisdomWaterServicePlatform\obj\Debug\netcoreapp2.0\WisdomWaterServicePlatform.csproj.CoreCompileInputs.cache
+C:\soft\智慧水务平台\智慧水务平台\WisdomWaterServicePlatform\obj\Debug\netcoreapp2.0\WisdomWaterServicePlatform.AssemblyInfoInputs.cache
+C:\soft\智慧水务平台\智慧水务平台\WisdomWaterServicePlatform\obj\Debug\netcoreapp2.0\WisdomWaterServicePlatform.AssemblyInfo.cs
+C:\soft\智慧水务平台\智慧水务平台\WisdomWaterServicePlatform\obj\Debug\netcoreapp2.0\WisdomWaterServicePlatform.dll
+C:\soft\智慧水务平台\智慧水务平台\WisdomWaterServicePlatform\obj\Debug\netcoreapp2.0\WisdomWaterServicePlatform.pdb
+C:\soft\vue\WisdomWaterServicePlatform\bin\Debug\netcoreapp2.0\WisdomWaterServicePlatform.deps.json
+C:\soft\vue\WisdomWaterServicePlatform\bin\Debug\netcoreapp2.0\WisdomWaterServicePlatform.runtimeconfig.json
+C:\soft\vue\WisdomWaterServicePlatform\bin\Debug\netcoreapp2.0\WisdomWaterServicePlatform.runtimeconfig.dev.json
+C:\soft\vue\WisdomWaterServicePlatform\bin\Debug\netcoreapp2.0\WisdomWaterServicePlatform.dll
+C:\soft\vue\WisdomWaterServicePlatform\bin\Debug\netcoreapp2.0\WisdomWaterServicePlatform.pdb
+C:\soft\vue\WisdomWaterServicePlatform\obj\Debug\netcoreapp2.0\WisdomWaterServicePlatform.csproj.CoreCompileInputs.cache
+C:\soft\vue\WisdomWaterServicePlatform\obj\Debug\netcoreapp2.0\WisdomWaterServicePlatform.AssemblyInfoInputs.cache
+C:\soft\vue\WisdomWaterServicePlatform\obj\Debug\netcoreapp2.0\WisdomWaterServicePlatform.AssemblyInfo.cs
+C:\soft\vue\WisdomWaterServicePlatform\obj\Debug\netcoreapp2.0\WisdomWaterServicePlatform.dll
+C:\soft\vue\WisdomWaterServicePlatform\obj\Debug\netcoreapp2.0\WisdomWaterServicePlatform.pdb
+D:\工作桌面\WisdomWaterServicePlatform\bin\Debug\netcoreapp2.0\WisdomWaterServicePlatform.deps.json
+D:\工作桌面\WisdomWaterServicePlatform\bin\Debug\netcoreapp2.0\WisdomWaterServicePlatform.runtimeconfig.json
+D:\工作桌面\WisdomWaterServicePlatform\bin\Debug\netcoreapp2.0\WisdomWaterServicePlatform.runtimeconfig.dev.json
+D:\工作桌面\WisdomWaterServicePlatform\bin\Debug\netcoreapp2.0\WisdomWaterServicePlatform.dll
+D:\工作桌面\WisdomWaterServicePlatform\bin\Debug\netcoreapp2.0\WisdomWaterServicePlatform.pdb
+D:\工作桌面\WisdomWaterServicePlatform\obj\Debug\netcoreapp2.0\WisdomWaterServicePlatform.csproj.CoreCompileInputs.cache
+D:\工作桌面\WisdomWaterServicePlatform\obj\Debug\netcoreapp2.0\WisdomWaterServicePlatform.AssemblyInfoInputs.cache
+D:\工作桌面\WisdomWaterServicePlatform\obj\Debug\netcoreapp2.0\WisdomWaterServicePlatform.AssemblyInfo.cs
+D:\工作桌面\WisdomWaterServicePlatform\obj\Debug\netcoreapp2.0\WisdomWaterServicePlatform.dll
+D:\工作桌面\WisdomWaterServicePlatform\obj\Debug\netcoreapp2.0\WisdomWaterServicePlatform.pdb
+D:\工作桌面\WisdomWaterServicePlatform\obj\Debug\netcoreapp2.0\WisdomWaterServicePlatform.csprojAssemblyReference.cache
+C:\soft\vue\WisdomWaterServicePlatform\obj\Debug\netcoreapp2.0\WisdomWaterServicePlatform.csprojAssemblyReference.cache

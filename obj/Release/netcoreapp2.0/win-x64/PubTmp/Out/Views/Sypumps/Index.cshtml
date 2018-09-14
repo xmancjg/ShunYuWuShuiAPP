@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "舜禹水务";
+    ViewData["active"] = "on";
+}
+
+
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.8&key=舜禹水务"></script>
+<script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
+<div id="container"></div>
+
+
+
+<script>
+    //初始化地图对象，加载地图
+    var map = new AMap.Map("container", { resizeEnable: true, zoom: 7 });
+    var lnglats = [
+
+        { "center": "117.27009, 31.96819", "name": "安徽舜禹水务泵房", "type": "0", "url": "?a=1", "id": "1", },
+        { "center": "117.28009, 31.96919", "name": "安徽舜禹水务泵房1", "type": "1", "url": "?a=2", "id": "2", },
+        { "center": "117.30009, 31.97019", "name": "安徽舜禹水务泵房2", "type": "2", "url": "?a=3", "id": "3", }
+
+    ];
+    var infoWindow = new AMap.InfoWindow({ offset: new AMap.Pixel(0, -30) });
+    for (var i = 0, marker; i < lnglats.length; i++) {
+        var marker = new AMap.Marker({
+            position: lnglats[i].center.split(','),
+            title: lnglats[i].type,
+            map: map
+        });
+        //for (var j = 0; j < lnglats[i].pic1.length; j++) {
+        marker.content = lnglats[i].id;
+        //}
+
+        //marker.content = "<div class='shebei-div'><div><h3 class='shebei-h3'>" + lnglats[i].name + "</h3><ul class='clearfix2 shebei'>";
+        //for (var j = 0; j < lnglats[i].pic1.length; j++) {
+        //alert(j);
+        //    marker.content += "<li><a href='/Default/Details?id=" + j + "'><img src='" + lnglats[i].pic1[j].a + "' /><p>" + lnglats[i].pic1[j].name + "</p></a></li>";
+        // }
+        //marker.content += "</ul></div></div>";
+        marker.on('click', markerClick);
+        //marker.emit('click', { target: marker });
+    }
+    function markerClick(e) {
+        infoWindow.setContent(e.target.content);
+        //infoWindow.setUrl(e.target.url);
+        infoWindow.open(map, e.target.getPosition());
+        //alert(this.content);
+        //window.location.href = "/Default/Details?id=" + lnglats.length;
+        window.location.href = "/Default/Details?name=义井社区东&id=" + this.content;
+    }
+            //map.setFitView();
+</script>

@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewData["Title"] = "用户登陆";
+    ViewData["show"] = "hide";
+}
+<div class="login">
+    <div>
+        <div class="login-logo"><img src="~/img/logo.png" /></div>
+        <div class="login-form">
+            <!--<form action="/Sypumps/Index" method="post">-->
+
+         
+                <input type="text" name="username" placeholder="请输入用户名" class="login-txt" id="name" />
+                <input type="text" name="password" placeholder="请输入密码" class="login-txt" id="password" />
+                @if (!string.IsNullOrEmpty(ViewData["Message"].ToString()))
+                {
+
+                    <p class="login-forget" style="color:red; align:center">@ViewData["Message"].ToString()</p>
+
+                }
+                <input type="submit" value="提交" class="login-btn" />
+            
+        </div>
+    <!--<p class="login-link"><a href="/Sypumps/Register"><span>------------</span>新用户注册<span>------------</span></a></p>-->
+</div>
+</div>
+<script>
+    var user = [{ "name": "admin", "password": "123456" },{ "name": "shunyu", "password": "123456" },{ "name": "shuiwu", "password": "123456" }];
+    //alert();
+    
+    $(".login-btn").click(function () {
+        var name = $("#name")[0].value;
+        var pword = $("#password")[0].value;
+            var flag = null;
+        for (var i = 0; i < user.length; i++) {
+
+            if (user[i].name == name && user[i].password == pword) {
+                var flag = true;                
+                //return false;
+            }
+        }
+           // alert(flag != null);
+       if (flag) {
+        window.location.href = "/Sypumps/Index";
+        } else {
+            alert("用户名或密码错误");
+        }
+
+    })
+</script>
+

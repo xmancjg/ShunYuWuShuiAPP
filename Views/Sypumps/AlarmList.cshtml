@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewData["Title"] = "列表页";
+    ViewData["list"] = "on";
+}
+@model IEnumerable<WisdomWaterServicePlatform.Models.Wushui>
+<div class="w-list">
+    <ul class="w-listul">
+
+        @Html.Partial("~/Views/Sypumps/ForAlarmList.cshtml")
+        
+    </ul>
+    <div class="w-listnull"></div>
+</div>
+
+<script>
+    function listfull() {
+        $.ajax({
+            url: '/Sypumps/ForAlarmList',
+            //dataType: 'jason',
+            method: "GET",
+            async: "true",
+            
+            success: function (detail) {
+                //alert("操作成功");
+                $(".w-listul").html(detail);
+                // console.log(jsonStr);
+            }, error: function () {
+                //alert("a");
+                //alert(type);
+            }
+        });
+    }
+    function notice() {
+        var l = $(".w-listul li").length;
+        if (l < 1) {
+            $(".w-listnull")[0].innerHTML = "亲，暂时没有报警哦!";
+        //alert(l);
+            //alert("qwe");
+        }
+    }
+    $(function () {
+        setInterval(function () {
+            //name = getQueryString('name');
+            listfull();
+            notice();
+        }, 10000);//8秒自动刷新
+    })
+    
+    notice()
+</script>

@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewData["Title"] = "Details";
+    ViewData["active"] = "on";
+}
+@model WisdomWaterServicePlatform.Models.Wushui
+<style type="text/css">
+    .alarm {
+        color:red;
+        font-weight:bold;
+    }
+    .stop {
+        color:darkblue;
+    }
+    .run {
+        color:greenyellow;
+    }
+ 
+</style>
+<div class="s-details">
+    <div class="s-details-main">
+        <ul class="s-detail-ul clearfix2" id="searchBar">
+            @Html.Partial("~/Views/Default/ForDetails.cshtml")
+        </ul>
+            <div class="s-pic"><img src="~/img/wushui.jpg" /></div>
+    </div>
+
+</div>
+
+<script>
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return decodeURI(r[2]); return null;
+
+    }
+    var name = null;
+    function detailfull() {
+        $.ajax({
+            url: '/Default/ForDetails',
+            //dataType: 'jason',
+            method: "GET",
+            async: "true",
+            data: {
+                name: name
+            },
+            success: function (detail) {
+                //alert("操作成功");
+                $("#searchBar").html(detail);
+                
+            }, error: function () {
+                //alert("a");
+                //alert(type);
+            }
+        });
+    }
+
+    $(function () {
+        setInterval(function () {
+            name = getQueryString('name');
+            detailfull();
+            
+        }, 5000);//8秒自动刷新
+    })
+    //alert("a");
+    /*function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return decodeURI(r[2]); return null;
+
+    }
+    var name=getQueryString('name');
+    $(function () {
+        setInterval(function () {
+            $("#searchBar").load("http://localhost:1752/Default/Details?name=" + name +"#searchBar");
+
+        }, 8000);//8秒自动刷新
+    })*/
+</script>
+
+

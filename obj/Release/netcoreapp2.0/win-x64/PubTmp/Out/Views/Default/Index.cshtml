@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.8&key=舜禹水务"></script>
+<script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
+<div id="container"></div>
+
+    <h2><img src="~/img/mark_bs1.png"/></h2>
+        <h2>Index2</h2>
+        <h2>Index3</h2>
+        <h2>Index4</h2>
+        <script>
+            //初始化地图对象，加载地图
+            var map = new AMap.Map("container", { resizeEnable: true, zoom: 7 });
+            var lnglats = [
+                //{ "center": "116.368904, 39.923423"},
+                //{ "center": "116.382122, 39.921176"},
+                //{ "center": "116.387271, 39.922501"},
+                //{ "center": "116.398258, 39.914600"},
+                { "center": "117.27009, 31.96819","name":"安徽舜禹水务泵房", "pic1": [{ "a": "../img/mark_bs1.png", "url": "?a=4", "name": "设备一" }, { "a": "../img/mark_bs2.png", "url": "?a=5", "name": "设备二" }]}
+                //{ "center": "116.368904, 39.923423", pic1: [{ "a": "~/img/mark_bs1.png", "url": "?a=0" }]},
+                //{ "center": "116.382122, 39.921176", pic1: [{ "a": "~/img/mark_bs1.png", "url": "?a=1" }] },
+                //{ "center": "116.387271, 39.922501", pic1: [{ "a": "~/img/mark_bs1.png", "url": "?a=2" }] },
+                //{ "center": "116.398258, 39.914600", pic1: [{ "a": "~/img/mark_bs1.png", "url": "?a=3" }] },
+                //{ "center": "117.27009, 31.96819", pic1: [{ "a": "~/img/mark_bs1.png", "url": "?a=4" }, { "a": "~/img/mark_bs2.png", "url": "?a=5" }] }
+            ];
+            var infoWindow = new AMap.InfoWindow({ offset: new AMap.Pixel(0, -30) });
+            for (var i = 0, marker; i < lnglats.length; i++) {
+                var marker = new AMap.Marker({
+                    position: lnglats[i].center.split(','),
+                    map: map
+                });
+                
+                //marker.content = "<div class='tan-bg'><div><ul>" + marker.Div+"</ul></div></div>";
+                //marker.content = "我是第<a href='/Default/Details?id=" + i + "'>" + (i + 1) + "<img src='" + lnglats[i].pic1[0].a + "' />个Marker</a>";
+                marker.content = "<div><div><h3>"+lnglats[i].name+"</h3>";
+                for (var j = 0; j < lnglats[i].pic1.length; j++) {
+                    //alert(j);
+                    marker.content += "<a href='/Default/Details?id=" + j + "'><img src='" + lnglats[i].pic1[j].a + "' /><p>" + lnglats[i].pic1[j].name+"</p></a>";
+                }
+                marker.content += "</div></div>";
+                marker.on('click', markerClick);
+                //marker.emit('click', { target: marker });
+            }
+            function markerClick(e) {
+                infoWindow.setContent(e.target.content);
+                infoWindow.open(map, e.target.getPosition());
+            }
+            //map.setFitView();
+        </script>

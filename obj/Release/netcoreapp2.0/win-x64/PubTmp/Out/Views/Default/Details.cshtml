@@ -1,0 +1,176 @@
+﻿
+@{
+    ViewData["Title"] = "Details";
+    ViewData["active"] = "on";
+}
+@model WisdomWaterServicePlatform.Models.Wushui
+<style type="text/css">
+    .alarm {
+        color:red;
+        font-weight:bold;
+    }
+    .stop {
+        color:darkblue;
+    }
+    .run {
+        color:greenyellow;
+    }
+ 
+</style>
+<div class="s-details">
+    <div class="s-details-main">
+        <ul class="s-detail-ul clearfix2">
+            <!-- 瞬时流量S01 -->
+            <li class="s-detail-li"><span class="run"><i>@Model.ssll.ToString("F3")</i><p>瞬时流量</p></span></li>
+            <!-- 累计流量S01 -->
+            <li class="s-detail-li"><span class="run"><i>@Model.ljll</i><p>累计流量</p></span></li>
+            <!-- COD实时检测S01 -->
+            <li class="s-detail-li"><span class="run"><i>@Model.cod_ss</i><p>COD值</p></span></li>
+            <!-- PH实时检测S01 -->
+            <li class="s-detail-li"><span class="run"><i>@Model.ph_ss</i><p>PH值</p></span></li>
+            <!-- 氨氮值 -->
+            <li class="s-detail-li"><span class="run"><i>@Model.ad_ss</i><p>氨氮值</p></span></li>
+            <!-- 液位反馈S01 -->
+            <li class="s-detail-li"><span class="run"><i>@Model.yw)</i><p>液位值</p></span></li>
+
+
+
+            <!-- 一号MBR泵 -->
+            @if (Model.mbr1_run == 1 && Model.mbr1_stop == 0)
+            {
+                <li class="s-detail-li"><span class="run"><i>运行</i><p>一号MBR泵</p></span></li>
+            }
+            else
+            {
+                <li class="s-detail-li"><span class="stop"><i>停止</i><p>一号MBR泵</p></span></li>
+            }
+
+            <!-- 一号回流泵 -->
+            @if (Model.hlb1_fault == 0 & Model.hlb1_run == 1)
+            {
+                <li class="s-detail-li"><span class="run"><i>运行</i><p>一号回流泵</p></span></li>
+            }
+            else if (Model.hlb1_fault == 0 & Model.hlb1_stop == 1)
+            {
+                <li class="s-detail-li"><span class="stop"><i>停止</i><p>一号回流泵</p></span></li>
+            }
+            else
+            {
+                <li class="s-detail-li"><span class="alarm"><i>故障</i><p>一号回流泵</p></span></li>
+            }
+
+            <!-- 一号提升泵 -->
+            @if (Model.tsb1_fault == 0 & Model.tsb1_run == 1)
+            {
+                <li class="s-detail-li"><span class="run"><i>运行</i><p>一号提升泵</p></span></li>
+            }
+            else if (Model.tsb1_fault == 0 & Model.tsb1_stop == 1)
+            {
+                <li class="s-detail-li"><span class="stop"><i>停止</i><p>一号提升泵</p></span></li>
+            }
+            else
+            {
+                <li class="s-detail-li"><span class="alarm"><i>故障</i><p>一号提升泵</p></span></li>
+            }
+
+            <!-- 一号污泥泵 -->
+            @if (Model.wn1_fault == 0 & Model.wn1_run == 1)
+            {
+                <li class="s-detail-li"><span class="run"><i>运行</i><p>一号污泥泵</p></span></li>
+            }
+            else if (Model.wn1_fault == 0 & Model.wn1_stop == 1)
+            {
+                <li class="s-detail-li"><span class="stop"><i>停止</i><p>一号污泥泵</p></span></li>
+            }
+            else
+            {
+                <li class="s-detail-li"><span class="alarm"><i>故障</i><p>一号污泥泵</p></span></li>
+            }
+
+            <!-- 一号风机 -->
+            @if (Model.fan1_fault == 0 & Model.fan1_run == 1)
+            {
+                <li class="s-detail-li"><span class="run"><i>运行</i><p>一号风机</p></span></li>
+            }
+            else if (Model.fan1_fault == 0 & Model.fan1_stop == 1)
+            {
+                <li class="s-detail-li"><span class="stop"><i>停止</i><p>一号风机</p></span></li>
+            }
+            else
+            {
+                <li class="s-detail-li"><span class="alarm"><i>故障</i><p>一号风机</p></span></li>
+            }
+
+            <!-- 二号回流泵 -->
+            @if (Model.hlb2_fault == 0 & Model.hlb2_run == 1)
+            {
+                <li class="s-detail-li"><span class="run"><i>运行</i><p>二号回流泵</p></span></li>
+            }
+            else if (Model.hlb2_fault == 0 & Model.hlb2_stop == 1)
+            {
+                <li class="s-detail-li"><span class="stop"><i>停止</i><p>二号回流泵</p></span></li>
+            }
+            else
+            {
+                <li class="s-detail-li"><span class="alarm"><i>故障</i><p>二号回流泵</p></span></li>
+            }
+
+            <!-- 二号提升泵 -->
+            @if (Model.tsb2_fault == 0 & Model.tsb2_run == 1)
+            {
+                <li class="s-detail-li"><span class="run"><i>运行</i><p>二号提升泵</p></span></li>
+            }
+            else if (Model.tsb2_fault == 0 & Model.tsb2_stop == 1)
+            {
+                <li class="s-detail-li"><span class="stop"><i>停止</i><p>二号提升泵</p></span></li>
+            }
+            else
+            {
+                <li class="s-detail-li"><span class="alarm"><i>故障</i><p>二号提升泵</p></span></li>
+            }
+
+            <!-- 二号污泥泵 -->
+            @if (Model.wn2_fault == 0 & Model.wn2_run == 1)
+            {
+                <li class="s-detail-li"><span class="run"><i>运行</i><p>二号污泥泵</p></span></li>
+            }
+            else if (Model.wn2_fault == 0 & Model.wn2_stop == 1)
+            {
+                <li class="s-detail-li"><span class="stop"><i>停止</i><p>二号污泥泵</p></span></li>
+            }
+            else
+            {
+                <li class="s-detail-li"><span class="alarm"><i>故障</i><p>二号污泥泵</p></span></li>
+            }
+
+            <!-- 二号风机 -->
+            @if (Model.fan2_fault == 0 & Model.fan2_run == 1)
+            {
+                <li class="s-detail-li"><span class="run"><i>运行</i><p>二号风机</p></span></li>
+            }
+            else if (Model.fan2_fault == 0 & Model.fan2_stop == 1)
+            {
+                <li class="s-detail-li"><span class="stop"><i>停止</i><p>二号风机</p></span></li>
+            }
+            else
+            {
+                <li class="s-detail-li"><span class="alarm"><i>故障</i><p>二号风机</p></span></li>
+            }
+
+            <!-- 调节池低液位报警S01 -->
+            @if (Model.tjc_low == 1)
+            {
+                <li class="s-detail-li"><span class="alarm"><i>故障</i><p>调节池液位低</p></span></li>
+            }
+            <!-- 调节池高液位报警S01 -->
+            @if (Model.tjc_high == 1)
+            {
+                <li class="s-detail-li"><span class="alarm"><i>故障</i><p>调节池液位高</p></span></li>
+            }
+        </ul>
+        
+        <div class="s-pic"><img src="~/img/device2.jpg" /></div>
+    </div>
+
+</div>
+

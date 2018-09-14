@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewData["Title"] = "列表页";
+    ViewData["list"] = "on";
+}
+@model IEnumerable<WisdomWaterServicePlatform.Models.Wushui>
+<div class="w-list">
+    <ul class="w-listul">
+
+        @foreach (var w in Model)
+        {
+            <li class="w-listli">
+                <a href="/Sypumps/Listd">
+                    <h3 class="wlisth3">
+                        @w.id_name
+                        <!--<i class="wlistcare">有任务</i>-->
+                    </h3>
+                    <!-- 一号回流泵 -->
+                    @if (w.hlb1_fault == 1)
+                    {
+                        <p class="wlistp">
+                            <font style="color:#ff0000"><b>故障：</b>一号回流泵</font><br />
+                            报警时间：@w.update_day.ToString("yyyy-MM-dd") @w.update_time.ToString("hh:mm:ss")<br />
+                        </p>
+                    }
+
+                    <!-- 一号提升泵 -->
+                    @if (w.tsb1_fault == 1)
+                    {
+                        <p class="wlistp">
+                            <font style="color:#ff0000"><b>故障：</b>一号提升泵</font><br />
+                            报警时间：@w.update_day.ToString("yyyy-MM-dd") @w.update_time.ToString("hh:mm:ss")<br />
+                        </p>
+                    }
+
+                    <!-- 一号污泥泵 -->
+                    @if (w.wn1_fault == 1)
+                    {
+                        <p class="wlistp">
+                            <font style="color:#ff0000"><b>故障：</b>一号污泥泵</font><br />
+                            报警时间：@w.update_day.ToString("yyyy-MM-dd") @w.update_time.ToString("hh:mm:ss")<br />
+                        </p>
+                    }
+
+                    <!-- 一号风机 -->
+                    @if (w.fan1_fault == 0)
+                    {
+                        <p class="wlistp">
+                            <font style="color:#ff0000"><b>故障：</b>一号风机</font><br />
+                            报警时间：@w.update_day.ToString("yyyy-MM-dd") @w.update_time.ToString(@"hh\:mm\:ss")<br />
+                        </p>
+                    }
+
+                    <!-- 二号回流泵 -->
+                    @if (w.hlb2_fault == 1)
+                    {
+                        <p class="wlistp">
+                            <font style="color:#ff0000"><b>故障：</b>二号回流泵</font><br />
+                            报警时间：@w.update_day.ToString("yyyy-MM-dd") @w.update_time.ToString("hh:mm:ss")<br />
+                        </p>
+                    }
+
+                    <!-- 二号提升泵 -->
+                    @if (w.tsb2_fault == 1)
+                    {
+                        <p class="wlistp">
+                            <font style="color:#ff0000"><b>故障：</b>二号提升泵</font><br />
+                            报警时间：@w.update_day.ToString("yyyy-MM-dd") @w.update_time.ToString("hh:mm:ss")<br />
+                        </p>
+                    }
+
+                    <!-- 调节池低液位报警S01 -->
+                    @if (w.tjc_low == 1)
+                    {
+                        <p class="wlistp">
+                            <font style="color:#ff0000"><b>故障：</b>调节池液位低</font><br />
+                            报警时间：@w.update_day.ToString("yyyy-MM-dd") @w.update_time.ToString("hh:mm:ss")<br />
+                        </p>
+                    }
+
+                    <!-- 调节池高液位报警S01 -->
+                    @if (w.tjc_high == 1)
+                    {
+                        <p class="wlistp">
+                            <font style="color:#ff0000"><b>故障：</b>调节池液位高</font><br />
+                            报警时间：@w.update_day.ToString("yyyy-MM-dd") @w.update_time.ToString("hh:mm:ss")<br />
+                        </p>
+                    }
+
+
+                </a>
+            </li>
+
+         }
+
+
+    </ul>
+</div>
+
